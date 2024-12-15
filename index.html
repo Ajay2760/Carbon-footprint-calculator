@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Footprint Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://i.pinimg.com/736x/04/f3/f2/04f3f2644ec3b197e9a7ca80335e5b3e.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Carbon Footprint Calculator</h1>
+      <div id="form">
+        <div class="form-group">
+          <label for="electricity">Monthly electricity usage (kWh):</label>
+          <input type="number" id="electricity" />
+        </div>
+        <div class="form-group">
+          <label for="gas">Monthly gas usage (liters):</label>
+          <input type="number" id="gas" />
+        </div>
+        <div class="form-group">
+          <label for="vehicle">Vehicle type (car/bike/public):</label>
+          <input type="text" id="vehicle" />
+        </div>
+        <div class="form-group">
+          <label for="distance">Average monthly distance traveled (km):</label>
+          <input type="number" id="distance" />
+        </div>
+        <div class="form-group">
+          <label for="meat">Meals containing meat per week:</label>
+          <input type="number" id="meat" />
+        </div>
+        <div class="form-group">
+          <label for="dairy">Meals containing dairy per week:</label>
+          <input type="number" id="dairy" />
+        </div>
+        <div class="form-group">
+          <label for="plant">Plant-based meals per week:</label>
+          <input type="number" id="plant" />
+        </div>
+        <div class="form-group">
+          <label for="waste">Monthly waste generation (kg):</label>
+          <input type="number" id="waste" />
+        </div>
+        <button id="calculate">Calculate</button>
+      </div>
+      <div id="output" class="output" style="display: none"></div>
+    </div>
+
+    <script>
+      document.getElementById("calculate").addEventListener("click", () => {
+        const electricityUsage =
+          parseFloat(document.getElementById("electricity").value) || 0;
+        const gasUsage = parseFloat(document.getElementById("gas").value) || 0;
+        const vehicleType = document
+          .getElementById("vehicle")
+          .value.toLowerCase();
+        const distanceTraveled =
+          parseFloat(document.getElementById("distance").value) || 0;
+        const meatMeals =
+          parseFloat(document.getElementById("meat").value) || 0;
+        const dairyMeals =
+          parseFloat(document.getElementById("dairy").value) || 0;
+        const plantMeals =
+          parseFloat(document.getElementById("plant").value) || 0;
+        const wasteGenerated =
+          parseFloat(document.getElementById("waste").value) || 0;
+
+        // Energy Emissions
+        const energyEmissions = electricityUsage * 0.233 + gasUsage * 2.34;
+
+        // Transport Emissions
+        let transportFactor = 0;
+        if (vehicleType === "car") transportFactor = 0.21;
+        else if (vehicleType === "bike") transportFactor = 0.1;
+        else if (vehicleType === "public") transportFactor = 0.05;
+        const transportEmissions = distanceTraveled * transportFactor;
+
+        // Food Emissions
+        const foodEmissions =
+          (meatMeals * 7.2 + dairyMeals * 2.0 + plantMeals * 0.5) * 4;
+
+        // Waste Emissions
+        const wasteEmissions = wasteGenerated * 0.45;
+
+        // Total
+        const totalEmissions =
+          energyEmissions + transportEmissions + foodEmissions + wasteEmissions;
+
+        const outputDiv = document.getElementById("output");
+        outputDiv.style.display = "block";
+        outputDiv.innerHTML = `
+                <p><strong>Energy Emissions:</strong> ${energyEmissions.toFixed(
+                  2
+                )} kg CO2e</p>
+                <p><strong>Transport Emissions:</strong> ${transportEmissions.toFixed(
+                  2
+                )} kg CO2e</p>
+                <p><strong>Food Emissions:</strong> ${foodEmissions.toFixed(
+                  2
+                )} kg CO2e</p>
+                <p><strong>Waste Emissions:</strong> ${wasteEmissions.toFixed(
+                  2
+                )} kg CO2e</p>
+                <h3><strong>Total Monthly Emissions:</strong> ${totalEmissions.toFixed(
+                  2
+                )} kg CO2e</h3>
+            `;
+      });
+    </script>
+  </body>
+</html>
