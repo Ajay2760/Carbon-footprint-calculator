@@ -1,3 +1,5 @@
+//javascript code get input and show output from pop up message
+
 function getEnergyEmissions() {
   console.log("[DEBUG] Starting energy emissions calculation.");
   const electricityUsage = parseFloat(
