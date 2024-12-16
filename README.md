@@ -1,5 +1,7 @@
 Carbon Footprint Calculator
-Welcome to the Carbon Footprint Calculator! This simple web application allows users to calculate their monthly carbon emissions based on energy usage, transport habits, food consumption, and waste generation. The tool helps raise awareness about personal carbon footprints and provides actionable suggestions to reduce environmental impact.
+Welcome to the Carbon Footprint Calculator! 
+
+This simple web application allows users to calculate their monthly carbon emissions based on energy usage, transport habits, food consumption, and waste generation. The tool helps raise awareness about personal carbon footprints and provides actionable suggestions to reduce environmental impact.
 
 Features
 Energy Emissions: Calculate CO2 emissions from electricity and gas usage.
