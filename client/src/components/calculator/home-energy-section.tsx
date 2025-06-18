@@ -29,10 +29,10 @@ export function HomeEnergySection({ data, onChange }: HomeEnergySectionProps) {
               Monthly electricity bill
             </Label>
             <div className="relative mt-2">
-              <span className="absolute left-3 top-3 text-slate-400">$</span>
+              <span className="absolute left-3 top-3 text-slate-400">₹</span>
               <Input
                 type="number"
-                placeholder="120"
+                placeholder="10000"
                 value={data.monthlyElectricityBill || ""}
                 onChange={(e) => onChange('monthlyElectricityBill', parseFloat(e.target.value) || 0)}
                 className="pl-8"
@@ -78,10 +78,10 @@ export function HomeEnergySection({ data, onChange }: HomeEnergySectionProps) {
               Monthly gas bill
             </Label>
             <div className="relative mt-2">
-              <span className="absolute left-3 top-3 text-slate-400">$</span>
+              <span className="absolute left-3 top-3 text-slate-400">₹</span>
               <Input
                 type="number"
-                placeholder="80"
+                placeholder="6500"
                 value={data.monthlyGasBill || ""}
                 onChange={(e) => onChange('monthlyGasBill', parseFloat(e.target.value) || 0)}
                 className="pl-8"

@@ -8,9 +8,9 @@ export interface EmissionFactors {
     long: number;
   };
   
-  // Home Energy (kg CO2 per dollar of bill)
-  electricityPerDollar: number;
-  gasPerDollar: number;
+  // Home Energy (kg CO2 per rupee of bill)
+  electricityPerRupee: number;
+  gasPerRupee: number;
   greenEnergyReduction: number; // percentage reduction
   
   // Food (kg CO2 per year based on diet and habits)
@@ -44,8 +44,8 @@ export const EMISSION_FACTORS: EmissionFactors = {
     medium: 580, // kg CO2 per medium flight  
     long: 1100, // kg CO2 per long flight
   },
-  electricityPerDollar: 3.2, // Average kg CO2 per dollar of electricity
-  gasPerDollar: 5.3, // Average kg CO2 per dollar of natural gas
+  electricityPerRupee: 0.038, // Average kg CO2 per rupee of electricity (3.2/83 USD to INR)
+  gasPerRupee: 0.064, // Average kg CO2 per rupee of natural gas (5.3/83 USD to INR)
   greenEnergyReduction: 0.7, // 70% reduction for renewable energy
   diet: {
     omnivore: 2300, // kg CO2 per year
@@ -114,8 +114,8 @@ export function calculateCarbonFootprint(inputs: CarbonFootprintInputs): CarbonF
   const transportation = carEmissions + publicTransportEmissions + flightEmissions;
   
   // Home energy calculations
-  let electricityEmissions = inputs.monthlyElectricityBill * 12 * factors.electricityPerDollar;
-  let gasEmissions = inputs.monthlyGasBill * 12 * factors.gasPerDollar;
+  let electricityEmissions = inputs.monthlyElectricityBill * 12 * factors.electricityPerRupee;
+  let gasEmissions = inputs.monthlyGasBill * 12 * factors.gasPerRupee;
   
   if (inputs.usesGreenEnergy) {
     electricityEmissions *= (1 - factors.greenEnergyReduction);
@@ -191,7 +191,7 @@ export function getPersonalizedTips(inputs: CarbonFootprintInputs, results: Carb
     });
   }
   
-  if (inputs.monthlyElectricityBill > 100) {
+  if (inputs.monthlyElectricityBill > 8300) {
     tips.push({
       category: 'energy',
       title: 'Improve Home Efficiency',
