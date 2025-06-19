@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🌍 Carbon Footprint Calculator Web App
 
 A web-based application that helps users estimate their carbon emissions based on daily activities like transportation, electricity usage, diet, and more. The app empowers users to track, understand, and reduce their carbon footprint for a more sustainable future.
@@ -75,3 +76,6 @@ carbon-footprint-calculator/
 
 📄 License
 This project is licensed under the MIT License.
+=======
+# Tracker module
+>>>>>>> a471ceb (Resolved merge conflicts in package.json and package-lock.json)
