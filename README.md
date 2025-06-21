@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-🌍 Carbon Footprint Calculator Web App
-=======
 🌍 ECOPULSE - Carbon Footprint Calculator Web App
->>>>>>> ab96131 (Remove broken submodule reference)
 
 A web-based application that helps users estimate their carbon emissions based on daily activities like transportation, electricity usage, diet, and more. The app empowers users to track, understand, and reduce their carbon footprint for a more sustainable future.
 
@@ -82,6 +77,3 @@ carbon-footprint-calculator/
 
 📄 License
 This project is licensed under the MIT License.
-=======
-# Tracker module
->>>>>>> a471ceb (Resolved merge conflicts in package.json and package-lock.json)
