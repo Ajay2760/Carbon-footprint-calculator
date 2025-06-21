@@ -1,4 +1,4 @@
-🌍 ECOPULSE - Carbon Footprint Calculator Web App
+🌍 ECOCalculator - Carbon Footprint Calculator Web App
 
 A web-based application that helps users estimate their carbon emissions based on daily activities like transportation, electricity usage, diet, and more. The app empowers users to track, understand, and reduce their carbon footprint for a more sustainable future.
 
@@ -30,8 +30,7 @@ APIs: Custom Emission Calculation API
 
 Deployment: Vercel / Render / Netlify / Replit
 
-📸 Screenshots
-(Include screenshots here in your GitHub repo's /assets or upload via GitHub issues and embed the links)
+
 
 🧪 Demo
 
