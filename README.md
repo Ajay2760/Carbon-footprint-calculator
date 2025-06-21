@@ -1,9 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 🌍 Carbon Footprint Calculator Web App
+=======
+🌍 ECOPULSE - Carbon Footprint Calculator Web App
+>>>>>>> ab96131 (Remove broken submodule reference)
 
 A web-based application that helps users estimate their carbon emissions based on daily activities like transportation, electricity usage, diet, and more. The app empowers users to track, understand, and reduce their carbon footprint for a more sustainable future.
 
 🚀 Features
+
 🔢 Calculates total carbon emissions based on user inputs
 
 🏠 Categories include transport, home energy, food, and lifestyle
@@ -19,11 +24,12 @@ A web-based application that helps users estimate their carbon emissions based o
 🌐 Hosted version for easy access
 
 🛠️ Tech Stack
+
 Frontend: React, Tailwind CSS
 
-Backend: Node.js, Express 
+Backend: Node.js, Express
 
-Database: MongoDB / Firebase 
+Database: MongoDB / Firebase
 
 APIs: Custom Emission Calculation API
 
@@ -34,7 +40,7 @@ Deployment: Vercel / Render / Netlify / Replit
 
 🧪 Demo
 
-Live demo: https://carbon-footprint-calculator1.onrender.com
+Live demo: https://carbonfootprintcalculator0.netlify.app/
 
 🧾 How to Use
 Clone the repository:
@@ -65,11 +71,11 @@ Edit
 carbon-footprint-calculator/
 ├── public/
 ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── assets/
-│   ├── App.jsx
-│   └── index.js
+│ ├── components/
+│ ├── pages/
+│ ├── assets/
+│ ├── App.jsx
+│ └── index.js
 ├── .gitignore
 ├── package.json
 └── README.md
